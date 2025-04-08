@@ -5,7 +5,8 @@ from datetime import datetime
 def setup_logger(name):
     """设置日志记录器"""
     # 创建logs目录
-    log_dir = 'logs'
+    current_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    log_dir = os.path.join(current_dir, 'logs')
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
     
@@ -15,6 +16,10 @@ def setup_logger(name):
     # 创建日志记录器
     logger = logging.getLogger(name)
     logger.setLevel(logging.DEBUG)
+    
+    # 防止重复添加处理器
+    if logger.handlers:
+        return logger
     
     # 创建文件处理器
     file_handler = logging.FileHandler(log_file, encoding='utf-8')
