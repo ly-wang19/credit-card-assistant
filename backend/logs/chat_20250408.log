@@ -1,0 +1,871 @@
+2025-04-08 08:54:51,283 - chat - ERROR - 处理聊天请求失败: name 'os' is not defined
+2025-04-08 08:55:03,952 - chat - ERROR - 处理聊天请求失败: name 'os' is not defined
+2025-04-08 08:57:12,615 - chat - ERROR - 处理聊天请求失败: name 'os' is not defined
+2025-04-08 09:05:37,571 - chat - ERROR - 处理聊天请求失败: 'DeepSeekAdapter' object has no attribute 'chat'
+2025-04-08 09:07:14,344 - chat - ERROR - 处理聊天请求失败: The read operation timed out
+2025-04-08 09:07:45,410 - chat - ERROR - 处理聊天请求失败: The read operation timed out
+2025-04-08 09:08:19,149 - chat - ERROR - 处理聊天请求失败: The read operation timed out
+2025-04-08 09:11:16,006 - chat - ERROR - 处理聊天请求失败: The read operation timed out
+2025-04-08 09:13:33,226 - chat - INFO - 收到聊天请求: 推荐一张适合我的信用卡
+2025-04-08 09:13:33,245 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 09:13:52,115 - chat - INFO - 成功生成回答
+2025-04-08 09:14:25,148 - chat - INFO - 收到聊天请求: 给我推荐一张信用卡
+2025-04-08 09:14:25,182 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 09:14:35,840 - chat - INFO - 收到聊天请求: 给我推荐信用卡
+2025-04-08 09:14:35,857 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 09:14:43,118 - chat - INFO - 成功生成回答
+2025-04-08 09:14:56,194 - chat - INFO - 收到聊天请求: 信用卡
+2025-04-08 09:14:56,211 - chat - INFO - 搜索到 5 条信用卡信息
+2025-04-08 09:14:56,513 - chat - INFO - 成功生成回答
+2025-04-08 09:15:13,862 - chat - INFO - 成功生成回答
+2025-04-08 09:15:22,021 - chat - INFO - 收到聊天请求: 信用卡推荐
+2025-04-08 09:15:22,041 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 09:15:44,738 - chat - INFO - 成功生成回答
+2025-04-08 09:15:59,931 - chat - INFO - 收到聊天请求: 学生信用卡
+2025-04-08 09:15:59,950 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 09:16:06,976 - chat - INFO - 成功生成回答
+2025-04-08 11:34:11,566 - chat - INFO - 收到聊天请求: 中国银行
+2025-04-08 11:34:11,581 - chat - INFO - 搜索到 5 条信用卡信息
+2025-04-08 11:34:24,770 - chat - ERROR - 保存聊天记录失败: 1146 (42S02): Table 'credit_card_assistant.chat_history' doesn't exist
+2025-04-08 11:34:24,771 - chat - INFO - 成功生成回答
+2025-04-08 11:34:52,002 - chat - INFO - 收到聊天请求: 中国银行
+2025-04-08 11:34:52,020 - chat - INFO - 搜索到 5 条信用卡信息
+2025-04-08 11:35:18,518 - chat - ERROR - 保存聊天记录失败: 1146 (42S02): Table 'credit_card_assistant.chat_history' doesn't exist
+2025-04-08 11:35:18,519 - chat - INFO - 成功生成回答
+2025-04-08 11:35:30,479 - chat - INFO - 收到聊天请求: 中国银行
+2025-04-08 11:35:30,491 - chat - INFO - 搜索到 5 条信用卡信息
+2025-04-08 11:35:50,951 - chat - ERROR - 保存聊天记录失败: 1146 (42S02): Table 'credit_card_assistant.chat_history' doesn't exist
+2025-04-08 11:35:50,951 - chat - INFO - 成功生成回答
+2025-04-08 11:36:58,753 - chat - INFO - 收到聊天请求: 推荐一张适合我的信用卡
+2025-04-08 11:36:58,763 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 11:37:21,340 - chat - ERROR - 保存聊天记录失败: 1146 (42S02): Table 'credit_card_assistant.chat_history' doesn't exist
+2025-04-08 11:37:21,340 - chat - INFO - 成功生成回答
+2025-04-08 11:38:51,163 - chat - INFO - 收到聊天请求 - 用户ID: 2, 消息: 你好
+2025-04-08 11:38:51,164 - chat - INFO - 开始搜索知识库...
+2025-04-08 11:38:51,176 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 11:38:51,176 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 11:38:51,176 - chat - INFO - 初始化 DeepSeek 适配器...
+2025-04-08 11:38:51,220 - chat - INFO - 开始调用 DeepSeek API...
+2025-04-08 11:38:58,750 - chat - INFO - DeepSeek API 调用成功
+2025-04-08 11:38:58,751 - chat - INFO - 保存聊天记录...
+2025-04-08 11:38:58,768 - chat - ERROR - 保存聊天记录失败: 1146 (42S02): Table 'credit_card_assistant.chat_history' doesn't exist
+2025-04-08 11:38:58,768 - chat - INFO - 成功生成回答，准备返回响应
+2025-04-08 11:38:58,768 - chat - INFO - 关闭 DeepSeek 客户端
+2025-04-08 11:39:08,974 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:39:08,993 - chat - ERROR - 获取聊天记录失败: 1146 (42S02): Table 'credit_card_assistant.chat_history' doesn't exist
+2025-04-08 11:39:08,993 - chat - INFO - 找到 0 条历史记录
+2025-04-08 11:39:29,828 - chat - INFO - 收到聊天请求 - 用户ID: 2, 消息: 中国银行
+2025-04-08 11:39:29,829 - chat - INFO - 开始搜索知识库...
+2025-04-08 11:39:29,839 - chat - INFO - 搜索到 5 条信用卡信息
+2025-04-08 11:39:29,839 - chat - INFO - 搜索到 5 条信用卡信息
+2025-04-08 11:39:29,839 - chat - INFO - 初始化 DeepSeek 适配器...
+2025-04-08 11:39:29,855 - chat - INFO - 开始调用 DeepSeek API...
+2025-04-08 11:39:41,784 - chat - INFO - DeepSeek API 调用成功
+2025-04-08 11:39:41,785 - chat - INFO - 保存聊天记录...
+2025-04-08 11:39:41,797 - chat - ERROR - 保存聊天记录失败: 1146 (42S02): Table 'credit_card_assistant.chat_history' doesn't exist
+2025-04-08 11:39:41,798 - chat - INFO - 成功生成回答，准备返回响应
+2025-04-08 11:39:41,798 - chat - INFO - 关闭 DeepSeek 客户端
+2025-04-08 11:39:57,011 - chat - INFO - 收到聊天请求 - 用户ID: 2, 消息: 中银交大校友认同卡
+2025-04-08 11:39:57,011 - chat - INFO - 开始搜索知识库...
+2025-04-08 11:39:57,025 - chat - INFO - 搜索到 1 条信用卡信息
+2025-04-08 11:39:57,025 - chat - INFO - 搜索到 1 条信用卡信息
+2025-04-08 11:39:57,025 - chat - INFO - 初始化 DeepSeek 适配器...
+2025-04-08 11:39:57,055 - chat - INFO - 开始调用 DeepSeek API...
+2025-04-08 11:40:13,403 - chat - INFO - DeepSeek API 调用成功
+2025-04-08 11:40:13,404 - chat - INFO - 保存聊天记录...
+2025-04-08 11:40:13,416 - chat - ERROR - 保存聊天记录失败: 1146 (42S02): Table 'credit_card_assistant.chat_history' doesn't exist
+2025-04-08 11:40:13,417 - chat - INFO - 成功生成回答，准备返回响应
+2025-04-08 11:40:13,417 - chat - INFO - 关闭 DeepSeek 客户端
+2025-04-08 11:41:13,068 - chat - INFO - 收到聊天请求 - 用户ID: 2, 消息: 你好，请推荐一张信用卡
+2025-04-08 11:41:13,069 - chat - INFO - 开始搜索知识库...
+2025-04-08 11:41:13,077 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 11:41:13,077 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 11:41:13,077 - chat - INFO - 初始化 DeepSeek 适配器...
+2025-04-08 11:41:13,097 - chat - INFO - 开始调用 DeepSeek API...
+2025-04-08 11:41:33,649 - chat - INFO - DeepSeek API 调用成功
+2025-04-08 11:41:33,650 - chat - INFO - 保存聊天记录...
+2025-04-08 11:41:33,683 - chat - INFO - 成功生成回答，准备返回响应
+2025-04-08 11:41:33,683 - chat - INFO - 关闭 DeepSeek 客户端
+2025-04-08 11:41:37,948 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:41:37,959 - chat - INFO - 找到 1 条历史记录
+2025-04-08 11:41:46,519 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:41:46,528 - chat - INFO - 找到 1 条历史记录
+2025-04-08 11:42:04,373 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:42:04,391 - chat - INFO - 找到 1 条历史记录
+2025-04-08 11:42:06,940 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:42:06,947 - chat - INFO - 找到 1 条历史记录
+2025-04-08 11:42:10,029 - chat - INFO - 收到聊天请求 - 用户ID: 2, 消息: 你好
+2025-04-08 11:42:10,029 - chat - INFO - 开始搜索知识库...
+2025-04-08 11:42:10,039 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 11:42:10,039 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 11:42:10,039 - chat - INFO - 初始化 DeepSeek 适配器...
+2025-04-08 11:42:10,054 - chat - INFO - 开始调用 DeepSeek API...
+2025-04-08 11:42:17,351 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:42:17,360 - chat - INFO - 找到 1 条历史记录
+2025-04-08 11:42:17,469 - chat - INFO - DeepSeek API 调用成功
+2025-04-08 11:42:17,470 - chat - INFO - 保存聊天记录...
+2025-04-08 11:42:17,482 - chat - INFO - 成功生成回答，准备返回响应
+2025-04-08 11:42:17,482 - chat - INFO - 关闭 DeepSeek 客户端
+2025-04-08 11:42:19,433 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:42:19,441 - chat - INFO - 找到 2 条历史记录
+2025-04-08 11:42:32,735 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:42:32,741 - chat - INFO - 找到 2 条历史记录
+2025-04-08 11:42:33,841 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:42:33,852 - chat - INFO - 找到 2 条历史记录
+2025-04-08 11:42:42,261 - chat - INFO - 收到聊天请求 - 用户ID: 2, 消息: 广发银行
+2025-04-08 11:42:42,261 - chat - INFO - 开始搜索知识库...
+2025-04-08 11:42:42,274 - chat - INFO - 搜索到 5 条信用卡信息
+2025-04-08 11:42:42,274 - chat - INFO - 搜索到 5 条信用卡信息
+2025-04-08 11:42:42,274 - chat - INFO - 初始化 DeepSeek 适配器...
+2025-04-08 11:42:42,309 - chat - INFO - 开始调用 DeepSeek API...
+2025-04-08 11:43:04,196 - chat - INFO - DeepSeek API 调用成功
+2025-04-08 11:43:04,196 - chat - INFO - 保存聊天记录...
+2025-04-08 11:43:04,214 - chat - INFO - 成功生成回答，准备返回响应
+2025-04-08 11:43:04,214 - chat - INFO - 关闭 DeepSeek 客户端
+2025-04-08 11:46:23,632 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:46:23,641 - chat - INFO - 找到 3 条历史记录
+2025-04-08 11:47:02,235 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:47:02,246 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:48:09,367 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:48:09,376 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:49:38,620 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:49:38,625 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:49:46,187 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:49:46,198 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:50:02,377 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:50:02,385 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:50:32,064 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:50:32,075 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:50:42,027 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:50:42,036 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:53:19,878 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:53:19,895 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:54:45,025 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:54:45,042 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:56:09,735 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:56:09,746 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:56:20,041 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:56:20,048 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:56:25,437 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:56:25,443 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:57:10,362 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 11:57:10,371 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 11:57:12,653 - chat - INFO - 收到聊天请求 - 用户ID: 2, 消息: 你好
+2025-04-08 11:57:12,653 - chat - INFO - 开始搜索知识库...
+2025-04-08 11:57:12,661 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 11:57:12,662 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 11:57:12,662 - chat - INFO - 初始化 DeepSeek 适配器...
+2025-04-08 11:57:12,694 - chat - INFO - 开始调用 DeepSeek API...
+2025-04-08 11:57:12,700 - chat - INFO - 关闭 DeepSeek 客户端
+2025-04-08 11:57:12,700 - chat - ERROR - 处理聊天请求失败: [Errno 8] nodename nor servname provided, or not known
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 101, in handle_async_request
+    raise exc
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 124, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpcore/_backends/auto.py", line 31, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpcore/_backends/anyio.py", line 113, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 145, in chat_with_assistant
+    response = await deepseek.chat_completion([
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/llm_service/deepseek_adapter.py", line 59, in chat_completion
+    response = await self.client.post(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpx/_client.py", line 1859, in post
+    return await self.request(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno 8] nodename nor servname provided, or not known
+2025-04-08 12:01:58,535 - chat - INFO - 收到聊天请求 - 用户ID: 2, 消息: n你好
+2025-04-08 12:01:58,535 - chat - INFO - 开始搜索知识库...
+2025-04-08 12:01:58,542 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 12:01:58,542 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 12:01:58,542 - chat - INFO - 初始化 DeepSeek 适配器...
+2025-04-08 12:01:58,619 - chat - INFO - 开始调用 DeepSeek API...
+2025-04-08 12:02:06,118 - chat - INFO - DeepSeek API 调用成功
+2025-04-08 12:02:06,119 - chat - INFO - 保存聊天记录...
+2025-04-08 12:02:06,156 - chat - INFO - 成功生成回答，准备返回响应
+2025-04-08 12:02:06,156 - chat - INFO - 关闭 DeepSeek 客户端
+2025-04-08 12:16:49,741 - chat - INFO - 获取用户 2 的聊天历史记录
+2025-04-08 12:16:49,750 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'deleted_at' in 'where clause'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'deleted_at' in 'where clause'
+2025-04-08 16:06:41,898 - chat - INFO - 获取用户 4 的聊天历史记录
+2025-04-08 16:06:41,914 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:06:53,082 - chat - INFO - 获取用户 4 的聊天历史记录
+2025-04-08 16:06:53,090 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:06:57,632 - chat - INFO - 收到聊天请求 - 用户ID: 4, 消息: 你好
+2025-04-08 16:06:57,632 - chat - INFO - 开始搜索知识库...
+2025-04-08 16:06:57,637 - chat - ERROR - 搜索信用卡失败: 1054 (42S22): Unknown column 'bank_name' in 'where clause'
+2025-04-08 16:06:57,638 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 16:06:57,638 - chat - INFO - 初始化 DeepSeek 适配器...
+2025-04-08 16:06:57,662 - chat - INFO - 开始调用 DeepSeek API...
+2025-04-08 16:07:04,731 - chat - INFO - DeepSeek API 调用成功
+2025-04-08 16:07:04,732 - chat - INFO - 保存聊天记录...
+2025-04-08 16:07:04,742 - chat - ERROR - 保存聊天记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:07:04,742 - chat - INFO - 成功生成回答，准备返回响应
+2025-04-08 16:07:04,742 - chat - INFO - 关闭 DeepSeek 客户端
+2025-04-08 16:07:11,783 - chat - INFO - 获取用户 4 的聊天历史记录
+2025-04-08 16:07:11,791 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:31:18,570 - chat - INFO - 获取用户 4 的聊天历史记录
+2025-04-08 16:31:18,579 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:31:37,430 - chat - INFO - 获取用户 4 的聊天历史记录
+2025-04-08 16:31:37,447 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:32:26,242 - chat - INFO - 获取用户 5 的聊天历史记录
+2025-04-08 16:32:26,250 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:45:03,537 - chat - INFO - 获取用户 6 的聊天历史记录
+2025-04-08 16:45:03,549 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:45:42,615 - chat - INFO - 获取用户 6 的聊天历史记录
+2025-04-08 16:45:42,622 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:46:37,600 - chat - INFO - 获取用户 6 的聊天历史记录
+2025-04-08 16:46:37,611 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:46:38,757 - chat - INFO - 获取用户 6 的聊天历史记录
+2025-04-08 16:46:38,765 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:46:44,373 - chat - INFO - 获取用户 6 的聊天历史记录
+2025-04-08 16:46:44,382 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:46:46,063 - chat - INFO - 获取用户 6 的聊天历史记录
+2025-04-08 16:46:46,073 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:47:51,006 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 16:47:51,016 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:51:07,725 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 16:51:07,734 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:57:01,517 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 16:57:01,527 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:59:30,227 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 16:59:30,240 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:59:39,620 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 16:59:39,634 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 16:59:42,451 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 16:59:42,458 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 17:00:24,763 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 17:00:24,771 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 17:17:48,757 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 17:17:48,769 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 17:17:56,421 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 17:17:56,429 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'

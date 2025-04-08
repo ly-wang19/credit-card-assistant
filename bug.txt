@@ -1,0 +1,39 @@
+将这个数据导入到数据库中，
+[
+  {
+    "bank": "中国农业银行",
+    "name": "尊然白金信用卡",
+    "timestamp": "2025-04-08 02:34:02",
+    "level": "白金卡",
+    "annual_fee": "活动期间，首次办理农行信用卡且为尊然白金卡（典藏版、精粹版）主卡并成功核发的持卡人，满足以下任意一条，即可享受尊然白金卡年费优惠：1.申办时行内年日均金融资产（非贷款）达到等值人民币50万元（含）以上；2.申办时行内年日均金融资产（非贷款）达到等值人民币100万元（含）以上。",
+    "benefits": {
+      "机场贵宾厅": "可享受机场贵宾厅服务",
+      "金融服务费用减免": "可享受金融服务费用减免",
+      "道路救援": "配套道路救援等高端权益"
+    },
+    "requirements": {
+      "金融资产": "申办时行内年日均金融资产（非贷款）达到等值人民币50万元（含）以上",
+      "优质客户": "专为优质客户量身打造的高端信用卡"
+    },
+    "points_rule": "积分可兑换接送机等服务",
+    "credit_limit": "未明确说明，通常白金卡额度范围为5万-50万"
+  },
+]
+-- 创建信用卡表
+CREATE TABLE credit_cards (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    bank VARCHAR(255) NOT NULL,
+    card_type VARCHAR(50) NOT NULL,
+    annual_fee DECIMAL(10, 2),
+    rewards_rate DECIMAL(5, 2),
+    intro_apr VARCHAR(255),
+    regular_apr VARCHAR(255),
+    credit_score VARCHAR(50),
+    foreign_transaction_fee DECIMAL(5, 2),
+    signup_bonus VARCHAR(255),
+    benefits TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+); 
+

@@ -1,0 +1,2 @@
+2025-04-08 16:06:47,926 - profile - ERROR - 获取用户信息失败: 1054 (42S22): Unknown column 'avatar_url' in 'field list'
+2025-04-08 16:59:38,633 - profile - ERROR - 获取用户信息失败: 1054 (42S22): Unknown column 'avatar_url' in 'field list'

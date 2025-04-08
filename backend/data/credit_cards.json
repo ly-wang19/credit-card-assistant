@@ -1,0 +1,26 @@
+[
+    {
+        "name": "招商银行经典白金卡",
+        "bank": "招商银行",
+        "annual_fee": "主卡年费300元，首年免年费，刷卡满6次免次年年费",
+        "points_rule": "境内消费1元=1积分，境外消费1元=2积分",
+        "benefits": "机场贵宾厅服务，高尔夫服务，境外返现，航空延误险",
+        "card_type": "白金卡",
+        "credit_level": "中高端",
+        "foreign_transaction_fee": "1.5%",
+        "card_organization": "Visa",
+        "application_condition": "年收入8万元以上，信用记录良好"
+    },
+    {
+        "name": "中信银行京东联名卡",
+        "bank": "中信银行",
+        "annual_fee": "主卡年费200元，首年免年费，消费满5000元免次年年费",
+        "points_rule": "京东消费1元=3积分，其他消费1元=1积分",
+        "benefits": "京东购物优惠，网付保障，双倍积分",
+        "card_type": "金卡",
+        "credit_level": "普卡",
+        "foreign_transaction_fee": "1.5%",
+        "card_organization": "银联",
+        "application_condition": "年收入3万元以上，信用记录良好"
+    }
+] 
