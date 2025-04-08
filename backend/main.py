@@ -1,10 +1,18 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from api import auth, chat, profile, credit_cards
 from utils.logger import setup_logger
+from fastapi.security import OAuth2PasswordBearer
+from typing import Optional
 
 # 设置日志记录器
 logger = setup_logger('main')
+
+# 创建 OAuth2 依赖
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login", auto_error=False)
+
+async def get_optional_token(token: Optional[str] = Depends(oauth2_scheme)):
+    return token
 
 # 创建FastAPI应用
 app = FastAPI(
@@ -31,9 +39,9 @@ app.add_middleware(
 
 # 注册路由
 app.include_router(auth.router, prefix="/api/auth", tags=["认证"])
-app.include_router(chat.router, prefix="/api", tags=["聊天"])
-app.include_router(profile.router, prefix="/api", tags=["个人中心"])
-app.include_router(credit_cards.router, prefix="/api", tags=["信用卡"])
+app.include_router(chat.router, prefix="/api", tags=["聊天"], dependencies=[Depends(oauth2_scheme)])
+app.include_router(profile.router, prefix="/api", tags=["个人中心"], dependencies=[Depends(oauth2_scheme)])
+app.include_router(credit_cards.router, prefix="/api", tags=["信用卡"], dependencies=[Depends(oauth2_scheme)])
 
 @app.on_event("startup")
 async def startup_event():

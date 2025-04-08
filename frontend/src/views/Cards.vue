@@ -46,9 +46,9 @@
         <el-carousel-item v-for="card in filteredCards" :key="card.id">
           <el-card class="card-item" shadow="hover">
             <div class="card-content">
-              <h3>{{ card.bank_name }} - {{ card.card_name }}</h3>
+              <h3>{{ card.bank }} - {{ card.name }}</h3>
               <div class="card-info">
-                <p><strong>卡片等级：</strong>{{ card.card_level }}</p>
+                <p><strong>卡片等级：</strong>{{ card.level }}</p>
                 <p><strong>年费政策：</strong>{{ card.annual_fee }}</p>
                 <p><strong>信用额度：</strong>{{ card.credit_limit }}</p>
                 <div class="benefits">
@@ -77,9 +77,9 @@
         <el-col :span="8" v-for="card in filteredCards" :key="card.id">
           <el-card class="card-item" shadow="hover">
             <div class="card-content">
-              <h3>{{ card.bank_name }} - {{ card.card_name }}</h3>
+              <h3>{{ card.bank }} - {{ card.name }}</h3>
               <div class="card-info">
-                <p><strong>卡片等级：</strong>{{ card.card_level }}</p>
+                <p><strong>卡片等级：</strong>{{ card.level }}</p>
                 <p><strong>年费政策：</strong>{{ card.annual_fee }}</p>
                 <p><strong>信用额度：</strong>{{ card.credit_limit }}</p>
                 <div class="benefits">
@@ -167,20 +167,49 @@ const annualFees = ref([
 // 获取信用卡列表
 const fetchCards = async () => {
   try {
-    const response = await cardsApi.getAll()
-    cardsList.value = response.data
+    console.log('开始获取信用卡列表')
+    // 创建一个数组存储所有的Promise
+    const promises = []
+    // 根据数据库中的卡片数量，遍历获取每张卡片
+    for (let i = 1; i <= 8; i++) {
+      promises.push(
+        cardsApi.getDetail(i).catch(error => {
+          console.log(`获取卡片${i}失败:`, error)
+          return { data: null } // 返回空数据而不是抛出错误
+        })
+      )
+    }
+    
+    // 并行获取所有卡片信息
+    const responses = await Promise.all(promises)
+    // 过滤掉失败的请求，只保留成功的数据
+    cardsList.value = responses
+      .filter(response => response.data)
+      .map(response => response.data)
+    
+    console.log('成功获取信用卡列表:', cardsList.value)
   } catch (error) {
     console.error('获取信用卡列表失败:', error)
-    ElMessage.error('获取信用卡列表失败')
+    if (error.response?.status === 401) {
+      ElMessage.error('请先登录')
+      router.push('/login')
+    } else {
+      ElMessage.error('获取信用卡列表失败，请稍后重试')
+    }
   }
 }
 
 // 筛选后的信用卡列表
 const filteredCards = computed(() => {
+  if (!cardsList.value || !Array.isArray(cardsList.value)) {
+    console.warn('cardsList不是数组:', cardsList.value)
+    return []
+  }
   return cardsList.value.filter(card => {
-    const matchBank = !filterForm.value.bank || card.bank_name === filterForm.value.bank
-    const matchLevel = !filterForm.value.level || card.card_level === filterForm.value.level
-    const matchAnnualFee = !filterForm.value.annualFee || card.annual_fee.includes(filterForm.value.annualFee)
+    const matchBank = !filterForm.value.bank || card.bank === filterForm.value.bank
+    const matchLevel = !filterForm.value.level || card.level === filterForm.value.level
+    const matchAnnualFee = !filterForm.value.annualFee || 
+                          (card.annual_fee && card.annual_fee.includes(filterForm.value.annualFee))
     return matchBank && matchLevel && matchAnnualFee
   })
 })
@@ -200,8 +229,8 @@ const resetFilter = () => {
 }
 
 // 查看卡片详情
-const viewCardDetail = (cardId) => {
-  router.push(`/cards/${cardId}`)
+const viewCardDetail = (id) => {
+  router.push(`/cards/${id}`)
 }
 
 onMounted(() => {

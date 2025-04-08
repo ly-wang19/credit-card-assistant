@@ -12,7 +12,7 @@ db_config = {
     'host': os.getenv('DB_HOST', 'localhost'),
     'user': os.getenv('DB_USERNAME', 'root'),
     'password': os.getenv('DB_PASSWORD', ''),
-    'database': os.getenv('DB_DATABASE', 'credit_card_db')
+    'database': os.getenv('DB_DATABASE', 'credit_card_assistant')
 }
 
 # 示例数据

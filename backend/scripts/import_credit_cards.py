@@ -7,14 +7,17 @@ from typing import List, Dict, Any
 import mysql.connector
 from mysql.connector import Error
 from pathlib import Path
+from datetime import datetime
 
-# 添加父目录到Python路径以导入项目模块
-sys.path.append(str(Path(__file__).parent.parent))
+# 添加项目根目录到 Python 路径
+project_root = Path(__file__).parent.parent.parent
+sys.path.append(str(project_root))
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Base, CreditCard
 from config import Settings
+from backend.database.db import get_db_connection
 
 # 配置日志
 logging.basicConfig(
@@ -33,7 +36,7 @@ def get_db_config() -> Dict[str, str]:
         'host': 'localhost',
         'user': 'root',
         'password': '1996129.yin',
-        'database': 'credit_card_db'
+        'database': 'credit_card_assistant'
     }
 
 def format_annual_fee(annual_fee: Dict) -> str:
@@ -67,77 +70,64 @@ def format_application_condition(condition: Dict) -> str:
         return '，'.join(f"{v}" for v in condition.values())
     return str(condition)
 
-def import_credit_cards(json_file_path: str) -> None:
-    """从JSON文件导入信用卡数据到MySQL数据库"""
-    if not os.path.exists(json_file_path):
-        logging.error(f"文件不存在: {json_file_path}")
-        return
-
+def import_credit_cards(json_file_path):
     try:
-        with open(json_file_path, 'r', encoding='utf-8') as file:
-            data = json.load(file)
-            # 获取credit_cards数组
-            credit_cards = data.get('credit_cards', [])
-    except json.JSONDecodeError as e:
-        logging.error(f"JSON解析错误: {str(e)}")
-        return
-    except Exception as e:
-        logging.error(f"读取文件时发生错误: {str(e)}")
-        return
+        # 读取 JSON 文件
+        with open(json_file_path, 'r', encoding='utf-8') as f:
+            credit_cards = json.load(f)
 
-    if not isinstance(credit_cards, list):
-        logging.error("JSON数据必须是信用卡对象的列表")
-        return
+        # 获取数据库连接
+        conn = get_db_connection()
+        cursor = conn.cursor()
 
-    connection = None
-    try:
-        connection = mysql.connector.connect(**get_db_config())
-        cursor = connection.cursor()
-        
-        # 准备SQL语句
+        # 创建信用卡表（如果不存在）
+        with open(os.path.join(project_root, 'backend/database/credit_cards.sql'), 'r', encoding='utf-8') as f:
+            sql_create_table = f.read()
+            cursor.execute(sql_create_table)
+
+        # 准备插入语句
         insert_query = """
-        INSERT INTO credit_cards (
-            name, bank, annual_fee, points_rule, benefits,
-            card_type, credit_level, foreign_transaction_fee,
-            card_organization, application_condition
-        ) VALUES (
-            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s
-        )
+        INSERT INTO credit_cards 
+        (bank, name, timestamp, level, annual_fee, benefits, requirements, points_rule, credit_limit)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        ON DUPLICATE KEY UPDATE
+        timestamp = VALUES(timestamp),
+        level = VALUES(level),
+        annual_fee = VALUES(annual_fee),
+        benefits = VALUES(benefits),
+        requirements = VALUES(requirements),
+        points_rule = VALUES(points_rule),
+        credit_limit = VALUES(credit_limit)
         """
-        
-        success_count = 0
+
+        # 插入数据
         for card in credit_cards:
-            try:
-                values = (
-                    card.get('name', ''),
-                    card.get('bank', ''),
-                    format_annual_fee(card.get('annual_fee', {})),
-                    format_points_rule(card.get('points_rule', {})),
-                    format_benefits(card.get('benefits', [])),
-                    card.get('card_type', ''),
-                    card.get('credit_level', ''),
-                    card.get('foreign_transaction_fee', ''),
-                    card.get('card_organization', ''),
-                    format_application_condition(card.get('application_condition', {}))
-                )
-                cursor.execute(insert_query, values)
-                success_count += 1
-                logging.info(f"成功导入卡片: {card.get('name')}")
-            except Error as e:
-                logging.error(f"插入信用卡数据时发生错误: {str(e)}")
-                logging.error(f"失败的数据: {card}")
-                continue
+            values = (
+                card['bank'],
+                card['name'],
+                datetime.strptime(card['timestamp'], '%Y-%m-%d %H:%M:%S'),
+                card['level'],
+                card['annual_fee'],
+                json.dumps(card['benefits'], ensure_ascii=False),
+                json.dumps(card['requirements'], ensure_ascii=False),
+                card['points_rule'],
+                card['credit_limit']
+            )
+            cursor.execute(insert_query, values)
 
-        connection.commit()
-        logging.info(f"成功导入 {success_count} 张信用卡")
+        # 提交事务
+        conn.commit()
+        print(f"成功导入 {len(credit_cards)} 条信用卡数据")
 
-    except Error as e:
-        logging.error(f"数据库连接错误: {str(e)}")
+    except Exception as e:
+        print(f"导入数据时出错: {str(e)}")
+        if 'conn' in locals():
+            conn.rollback()
     finally:
-        if connection and connection.is_connected():
+        if 'cursor' in locals():
             cursor.close()
-            connection.close()
-            logging.info("数据库连接已关闭")
+        if 'conn' in locals():
+            conn.close()
 
 def create_database_connection():
     """创建数据库连接"""
@@ -208,11 +198,7 @@ def main():
     finally:
         session.close()
 
-if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("使用方法: python import_credit_cards.py <json文件路径>")
-        sys.exit(1)
-    
-    json_file_path = sys.argv[1]
+if __name__ == '__main__':
+    json_file_path = os.path.join(project_root, 'results/credit_cards_detail_20250408_025432.json')
     import_credit_cards(json_file_path)
     main() 

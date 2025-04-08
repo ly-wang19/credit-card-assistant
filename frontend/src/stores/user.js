@@ -20,7 +20,8 @@ export const useUserStore = defineStore('user', () => {
   const login = async (credentials) => {
     try {
       const response = await auth.login(credentials)
-      const { access_token, user: userData } = response.data
+      console.log('登录响应:', response.data)
+      const { access_token, token_type, user: userData } = response.data
       user.value = userData
       token.value = access_token
       isAuthenticated.value = true

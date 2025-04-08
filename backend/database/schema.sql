@@ -43,4 +43,21 @@ CREATE TABLE IF NOT EXISTS user_cards (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- 信用卡表
+CREATE TABLE IF NOT EXISTS credit_cards (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    bank VARCHAR(50) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    level VARCHAR(50),
+    annual_fee TEXT,
+    benefits JSON,
+    requirements JSON,
+    points_rule TEXT,
+    credit_limit VARCHAR(50),
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY `bank_card_name` (`bank`, `name`)
 ); 

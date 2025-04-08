@@ -93,25 +93,47 @@ import { ref, computed, onMounted } from 'vue'
 import { cards as cardsApi } from '../api'
 import { ElMessage } from 'element-plus'
 import { useUserStore } from '../stores/user'
+import { useRouter } from 'vue-router'
 
 const userStore = useUserStore()
 const cardsList = ref([])
 const selectedCards = ref([null, null])
 const loading = ref(false)
+const router = useRouter()
 
 // 获取所有信用卡列表
 const fetchCards = async () => {
   loading.value = true
   try {
-    const response = await cardsApi.getAll()
-    if (response.data && Array.isArray(response.data)) {
-      cardsList.value = response.data
-    } else {
-      ElMessage.error('获取信用卡列表失败：数据格式错误')
+    console.log('开始获取信用卡列表')
+    // 创建一个数组存储所有的Promise
+    const promises = []
+    // 根据数据库中的卡片数量，遍历获取每张卡片
+    for (let i = 1; i <= 8; i++) {
+      promises.push(
+        cardsApi.getDetail(i).catch(error => {
+          console.log(`获取卡片${i}失败:`, error)
+          return { data: null } // 返回空数据而不是抛出错误
+        })
+      )
     }
+    
+    // 并行获取所有卡片信息
+    const responses = await Promise.all(promises)
+    // 过滤掉失败的请求，只保留成功的数据
+    cardsList.value = responses
+      .filter(response => response.data)
+      .map(response => response.data)
+    
+    console.log('成功获取信用卡列表:', cardsList.value)
   } catch (error) {
     console.error('获取信用卡列表失败:', error)
-    ElMessage.error('获取信用卡列表失败')
+    if (error.response?.status === 401) {
+      ElMessage.error('请先登录')
+      router.push('/login')
+    } else {
+      ElMessage.error('获取信用卡列表失败，请稍后重试')
+    }
   } finally {
     loading.value = false
   }
@@ -135,7 +157,7 @@ const comparisonItems = computed(() => {
   if (!card1 || !card2) return []
 
   return [
-    { label: '卡片等级', value1: card1.card_level || '暂无信息', value2: card2.card_level || '暂无信息' },
+    { label: '卡片等级', value1: card1.level || '暂无信息', value2: card2.level || '暂无信息' },
     { label: '年费', value1: card1.annual_fee || '暂无信息', value2: card2.annual_fee || '暂无信息' },
     { label: '信用额度', value1: card1.credit_limit || '暂无信息', value2: card2.credit_limit || '暂无信息' },
     { label: '积分规则', value1: card1.points_rule || '暂无信息', value2: card2.points_rule || '暂无信息' },

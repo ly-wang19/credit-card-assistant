@@ -32,6 +32,12 @@ const router = createRouter({
       meta: { requiresAuth: true }
     },
     {
+      path: '/cards/:id',
+      name: 'card-detail',
+      component: () => import('../views/CardDetail.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
       path: '/compare',
       name: 'compare',
       component: () => import('../views/Compare.vue'),

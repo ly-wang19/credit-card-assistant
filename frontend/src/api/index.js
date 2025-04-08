@@ -1,16 +1,25 @@
 import axios from 'axios'
 
-// 创建axios实例
-const api = axios.create({
-  baseURL: 'http://localhost:8000/api', // 修改为正确的API路径
-  timeout: 10000, // 增加超时时间到10秒
+// 创建需要认证的API实例
+const authApi = axios.create({
+  baseURL: 'http://localhost:8000/api',
+  timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
   }
 })
 
-// 请求拦截器
-api.interceptors.request.use(
+// 创建公开API实例
+const publicApi = axios.create({
+  baseURL: 'http://localhost:8000/api',
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+
+// 认证API的请求拦截器
+authApi.interceptors.request.use(
   config => {
     const token = localStorage.getItem('token')
     if (token) {
@@ -23,8 +32,8 @@ api.interceptors.request.use(
   }
 )
 
-// 响应拦截器
-api.interceptors.response.use(
+// 认证API的响应拦截器
+authApi.interceptors.response.use(
   response => response,
   error => {
     if (error.response && error.response.status === 401) {
@@ -38,8 +47,8 @@ api.interceptors.response.use(
 
 // 认证相关API
 export const auth = {
-  register: (data) => api.post('/auth/register', data),
-  login: (data) => api.post('/auth/login', new URLSearchParams({
+  register: (data) => authApi.post('/auth/register', data),
+  login: (data) => authApi.post('/auth/login', new URLSearchParams({
     username: data.username,
     password: data.password,
     grant_type: 'password'
@@ -48,20 +57,21 @@ export const auth = {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
   }),
-  getProfile: () => api.get('/auth/me')
+  getProfile: () => authApi.get('/auth/me')
 }
 
-// 信用卡相关API
+// 信用卡相关API（使用认证API实例）
 export const cards = {
-  getAll: () => api.get('/cards'),
-  getDetail: (id) => api.get(`/cards/${id}`),
-  compare: (ids) => api.post('/cards/compare', { card_ids: ids })
+  getAll: () => authApi.get('/cards'),
+  getById: (id) => authApi.get(`/cards/${id}`),
+  getDetail: (id) => authApi.get(`/cards/${id}`),
+  compare: (ids) => authApi.post('/cards/compare', { card_ids: ids })
 }
 
-// 聊天相关API
+// 聊天相关API（需要认证）
 export const chat = {
-  sendMessage: (message) => api.post('/chat', { message }),
-  getHistory: () => api.get('/chat/history')
+  sendMessage: (message) => authApi.post('/chat', { message }),
+  getHistory: () => authApi.get('/chat/history')
 }
 
-export default api 
+export default authApi 

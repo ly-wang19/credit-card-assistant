@@ -27,13 +27,18 @@
         <div class="flex items-center space-x-4">
           <template v-if="isAuthenticated">
             <el-dropdown>
-              <span class="flex items-center cursor-pointer">
+              <span class="flex items-center cursor-pointer hover:bg-gray-50 px-3 py-2 rounded-md">
                 <el-avatar :size="32" class="mr-2">{{ userInitials }}</el-avatar>
                 <span class="text-gray-700">{{ username }}</span>
               </span>
               <template #dropdown>
                 <el-dropdown-menu>
-                  <el-dropdown-item @click="handleLogout">退出登录</el-dropdown-item>
+                  <el-dropdown-item @click="router.push('/profile')">
+                    <i class="fas fa-user mr-2"></i>个人中心
+                  </el-dropdown-item>
+                  <el-dropdown-item @click="handleLogout">
+                    <i class="fas fa-sign-out-alt mr-2"></i>退出登录
+                  </el-dropdown-item>
                 </el-dropdown-menu>
               </template>
             </el-dropdown>
@@ -42,22 +47,6 @@
             <router-link to="/login" class="btn-secondary">登录</router-link>
             <router-link to="/register" class="btn-primary">注册</router-link>
           </template>
-          <div v-if="userStore.isAuthenticated" class="flex items-center space-x-4">
-            <router-link 
-              to="/profile" 
-              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-            >
-              <i class="fas fa-user mr-2"></i>
-              个人中心
-            </router-link>
-            <button 
-              @click="handleLogout" 
-              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-            >
-              <i class="fas fa-sign-out-alt mr-2"></i>
-              退出登录
-            </button>
-          </div>
         </div>
       </div>
     </div>

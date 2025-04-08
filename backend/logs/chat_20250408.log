@@ -869,3 +869,140 @@ Traceback (most recent call last):
   File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
     raise get_mysql_exception(
 mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 17:19:52,788 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 17:19:52,796 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 17:19:56,450 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 17:19:56,461 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 17:20:04,092 - chat - INFO - 获取用户 7 的聊天历史记录
+2025-04-08 17:20:04,099 - chat - ERROR - 获取聊天历史记录失败: 1054 (42S22): Unknown column 'message' in 'field list'
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 639, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'message' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/backend/api/chat.py", line 215, in get_chat_history_endpoint
+    cursor.execute(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/opentelemetry/context_propagation.py", line 77, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "/Users/wly/Documents/AI_信用卡智能体/credit-card-assistant/venv/lib/python3.10/site-packages/mysql/connector/connection_cext.py", line 647, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' in 'field list'
+2025-04-08 17:34:36,573 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 17:34:36,593 - chat - INFO - 找到 0 条历史记录
+2025-04-08 17:34:57,718 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 17:34:57,728 - chat - INFO - 找到 0 条历史记录
+2025-04-08 17:40:46,661 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 17:40:46,670 - chat - INFO - 找到 0 条历史记录
+2025-04-08 18:04:30,295 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:04:30,308 - chat - INFO - 找到 0 条历史记录
+2025-04-08 18:11:44,524 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:11:44,535 - chat - INFO - 找到 0 条历史记录
+2025-04-08 18:16:30,284 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:16:30,297 - chat - INFO - 找到 0 条历史记录
+2025-04-08 18:17:21,071 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:17:21,080 - chat - INFO - 找到 0 条历史记录
+2025-04-08 18:17:24,011 - chat - INFO - 收到聊天请求 - 用户ID: 1, 消息: 奴书
+2025-04-08 18:17:24,012 - chat - INFO - 开始搜索知识库...
+2025-04-08 18:17:24,026 - chat - ERROR - 搜索信用卡失败: 1054 (42S22): Unknown column 'bank_name' in 'where clause'
+2025-04-08 18:17:24,026 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 18:17:24,026 - chat - INFO - 初始化 DeepSeek 适配器...
+2025-04-08 18:17:24,078 - chat - INFO - 开始调用 DeepSeek API...
+2025-04-08 18:17:34,797 - chat - INFO - DeepSeek API 调用成功
+2025-04-08 18:17:34,797 - chat - INFO - 保存聊天记录...
+2025-04-08 18:17:34,834 - chat - INFO - 成功生成回答，准备返回响应
+2025-04-08 18:17:34,834 - chat - INFO - 关闭 DeepSeek 客户端
+2025-04-08 18:17:44,037 - chat - INFO - 收到聊天请求 - 用户ID: 1, 消息: 你好
+2025-04-08 18:17:44,037 - chat - INFO - 开始搜索知识库...
+2025-04-08 18:17:44,044 - chat - ERROR - 搜索信用卡失败: 1054 (42S22): Unknown column 'bank_name' in 'where clause'
+2025-04-08 18:17:44,044 - chat - INFO - 搜索到 0 条信用卡信息
+2025-04-08 18:17:44,044 - chat - INFO - 初始化 DeepSeek 适配器...
+2025-04-08 18:17:44,058 - chat - INFO - 开始调用 DeepSeek API...
+2025-04-08 18:17:51,346 - chat - INFO - DeepSeek API 调用成功
+2025-04-08 18:17:51,347 - chat - INFO - 保存聊天记录...
+2025-04-08 18:17:51,367 - chat - INFO - 成功生成回答，准备返回响应
+2025-04-08 18:17:51,367 - chat - INFO - 关闭 DeepSeek 客户端
+2025-04-08 18:27:01,401 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:27:01,411 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:27:04,257 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:27:04,264 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:29:30,517 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:29:30,529 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:29:35,508 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:29:35,517 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:29:58,728 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:29:58,737 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:35:04,047 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:35:04,062 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:41:30,651 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:41:30,665 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:41:36,846 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:41:36,855 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:49:30,655 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:49:30,672 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:50:16,386 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:50:16,396 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:50:27,374 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:50:27,383 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:52:45,140 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:52:45,150 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:53:03,562 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:53:03,569 - chat - INFO - 找到 2 条历史记录
+2025-04-08 18:55:16,729 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 18:55:16,737 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:02:52,329 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 19:02:52,344 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:30:37,750 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 19:30:37,760 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:30:42,746 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 19:30:42,754 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:31:05,521 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 19:31:05,528 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:31:21,360 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 19:31:21,367 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:35:34,358 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 19:35:34,367 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:36:22,334 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 19:36:22,346 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:36:24,363 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 19:36:24,369 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:36:26,715 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 19:36:26,721 - chat - INFO - 找到 2 条历史记录

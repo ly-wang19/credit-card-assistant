@@ -1,89 +1,101 @@
 <template>
-  <div class="card-detail-container">
-    <el-card class="card-detail-card">
-      <template #header>
-        <div class="card-header">
-          <h2>{{ card.bank_name }} - {{ card.card_name }}</h2>
-        </div>
-      </template>
+  <div class="container mx-auto px-4 py-8">
+    <div v-if="loading" class="text-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
+      <p class="mt-4 text-gray-600">加载中...</p>
+    </div>
+    
+    <div v-else-if="error" class="text-center text-red-500">
+      {{ error }}
+    </div>
+    
+    <div v-else class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+      <!-- 卡片头部 -->
+      <div class="bg-gradient-to-r from-blue-500 to-blue-700 p-6 text-white">
+        <h1 class="text-3xl font-bold">{{ card.name }}</h1>
+        <p class="mt-2 text-lg">{{ card.bank }}</p>
+        <p v-if="card.level" class="mt-1">等级：{{ card.level }}</p>
+      </div>
       
-      <div class="card-detail-content" v-if="card.id">
-        <el-descriptions :column="1" border>
-          <el-descriptions-item label="卡片等级">
-            {{ card.card_level }}
-          </el-descriptions-item>
-          <el-descriptions-item label="年费政策">
-            {{ card.annual_fee || '暂无信息' }}
-          </el-descriptions-item>
-          <el-descriptions-item label="信用额度">
-            {{ card.credit_limit || '暂无信息' }}
-          </el-descriptions-item>
-          <el-descriptions-item label="主要权益">
-            {{ card.benefits || '暂无信息' }}
-          </el-descriptions-item>
-          <el-descriptions-item label="申请条件">
-            {{ card.requirements || '暂无信息' }}
-          </el-descriptions-item>
-        </el-descriptions>
+      <!-- 卡片详情 -->
+      <div class="p-6">
+        <!-- 年费信息 -->
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">年费政策</h2>
+          <p class="text-gray-600">{{ card.annual_fee || '暂无年费信息' }}</p>
+        </div>
         
-        <div class="card-actions">
-          <el-button @click="goBack">返回列表</el-button>
+        <!-- 权益信息 -->
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">卡片权益</h2>
+          <div v-if="Object.keys(card.benefits).length > 0" class="grid gap-4">
+            <div v-for="(value, key) in card.benefits" :key="key" class="bg-gray-50 p-4 rounded">
+              <h3 class="font-medium text-gray-800">{{ key }}</h3>
+              <p class="mt-1 text-gray-600">{{ value }}</p>
+            </div>
+          </div>
+          <p v-else class="text-gray-600">暂无权益信息</p>
+        </div>
+        
+        <!-- 申请条件 -->
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">申请条件</h2>
+          <div v-if="Object.keys(card.requirements).length > 0" class="grid gap-4">
+            <div v-for="(value, key) in card.requirements" :key="key" class="bg-gray-50 p-4 rounded">
+              <h3 class="font-medium text-gray-800">{{ key }}</h3>
+              <p class="mt-1 text-gray-600">{{ value }}</p>
+            </div>
+          </div>
+          <p v-else class="text-gray-600">暂无申请条件信息</p>
+        </div>
+        
+        <!-- 积分规则 -->
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">积分规则</h2>
+          <p class="text-gray-600">{{ card.points_rule || '暂无积分规则信息' }}</p>
+        </div>
+        
+        <!-- 信用额度 -->
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">信用额度</h2>
+          <p class="text-gray-600">{{ card.credit_limit || '暂无信用额度信息' }}</p>
         </div>
       </div>
       
-      <el-empty v-else description="加载中..." />
-    </el-card>
+      <!-- 底部按钮 -->
+      <div class="px-6 py-4 bg-gray-50 border-t">
+        <button @click="$router.push('/cards')" class="text-blue-500 hover:text-blue-700">
+          返回信用卡列表
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { cards as cardsApi } from '../api'
+import { useRoute } from 'vue-router'
+import { cards } from '../api'
 
 const route = useRoute()
-const router = useRouter()
-const card = ref({})
+const card = ref(null)
+const loading = ref(true)
+const error = ref(null)
 
 const fetchCardDetail = async () => {
   try {
-    const response = await cardsApi.getDetail(route.params.id)
+    loading.value = true
+    error.value = null
+    const response = await cards.getDetail(route.params.id)
     card.value = response.data
-  } catch (error) {
-    console.error('获取信用卡详情失败:', error)
+  } catch (err) {
+    error.value = err.response?.data?.detail || '获取信用卡详情失败'
+  } finally {
+    loading.value = false
   }
-}
-
-const goBack = () => {
-  router.push('/cards')
 }
 
 onMounted(() => {
   fetchCardDetail()
 })
-</script>
-
-<style scoped>
-.card-detail-container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 0 20px;
-}
-
-.card-detail-card {
-  min-height: calc(100vh - 100px);
-}
-
-.card-header {
-  text-align: center;
-}
-
-.card-detail-content {
-  padding: 20px;
-}
-
-.card-actions {
-  margin-top: 20px;
-  text-align: center;
-}
-</style> 
+</script> 

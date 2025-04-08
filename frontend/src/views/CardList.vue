@@ -94,11 +94,23 @@ export default {
   methods: {
     async fetchCards() {
       try {
-        const response = await axios.get('http://localhost:8000/api/cards');
-        this.cards = response.data.data;
-        this.extractFilters();
+        // 创建一个数组存储所有的Promise
+        const promises = []
+        // 根据数据库中的卡片数量，遍历获取每张卡片
+        for (let i = 1; i <= 8; i++) {
+          promises.push(axios.get(`http://localhost:8000/api/cards/${i}`))
+        }
+        
+        // 并行获取所有卡片信息
+        const responses = await Promise.all(promises)
+        // 过滤掉失败的请求，只保留成功的数据
+        this.cards = responses
+          .filter(response => response.data)
+          .map(response => response.data)
+        
+        this.extractFilters()
       } catch (error) {
-        console.error('获取信用卡数据失败:', error);
+        console.error('获取信用卡数据失败:', error)
       }
     },
     extractFilters() {
