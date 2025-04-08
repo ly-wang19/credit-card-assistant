@@ -1006,3 +1006,11 @@ mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'message' 
 2025-04-08 19:36:24,369 - chat - INFO - 找到 2 条历史记录
 2025-04-08 19:36:26,715 - chat - INFO - 获取用户 1 的聊天历史记录
 2025-04-08 19:36:26,721 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:40:37,106 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 19:40:37,115 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:44:53,116 - chat - INFO - 获取用户 1 的聊天历史记录
+2025-04-08 19:44:53,132 - chat - INFO - 找到 2 条历史记录
+2025-04-08 19:48:28,995 - chat - INFO - 收到聊天请求 - 用户ID: 1, 消息: 你是谁
+2025-04-08 19:48:29,014 - chat - ERROR - 搜索信用卡失败: 1054 (42S22): Unknown column 'bank_name' in 'where clause'
+2025-04-08 19:48:53,747 - chat - INFO - 收到聊天请求 - 用户ID: 1, 消息: 那个信用卡更好用
+2025-04-08 19:48:53,762 - chat - ERROR - 搜索信用卡失败: 1054 (42S22): Unknown column 'bank_name' in 'where clause'

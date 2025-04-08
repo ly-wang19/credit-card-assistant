@@ -5,7 +5,7 @@
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <router-link to="/" class="text-2xl font-bold text-primary-600">
-              信用卡助手
+              智慧金融科技
             </router-link>
           </div>
           <div class="hidden sm:ml-8 sm:flex sm:space-x-4">

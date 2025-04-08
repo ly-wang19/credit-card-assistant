@@ -71,7 +71,10 @@ export const cards = {
 // 聊天相关API（需要认证）
 export const chat = {
   sendMessage: (message) => authApi.post('/chat', { message }),
-  getHistory: () => authApi.get('/chat/history')
+  getHistory: () => authApi.get('/chat/history'),
+  newConversation: () => authApi.post('/chat/new'),
+  clearHistory: () => authApi.delete('/chat/history'),
+  deleteMessage: (messageId) => authApi.delete(`/chat/message/${messageId}`)
 }
 
 export default authApi 

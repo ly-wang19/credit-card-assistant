@@ -133,5 +133,5 @@ npm run test
 
 ## 联系方式
 
-- 项目维护者: [Your Name](mailto:your.email@example.com)
+- 项目维护者: [ly-wang]()
 - 项目链接: https://github.com/your-username/credit-card-assistant 

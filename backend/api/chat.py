@@ -3,6 +3,7 @@ import logging
 from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from typing import Optional, List, Dict
+from datetime import datetime
 from agent.core import CreditCardAgent
 from llm_service.deepseek_adapter import DeepSeekAdapter
 from config import DB_CONFIG
@@ -19,6 +20,12 @@ class ChatMessage(BaseModel):
     message: str
     context: Optional[dict] = None
 
+class MessageResponse(BaseModel):
+    id: Optional[int]
+    role: str
+    content: str
+    created_at: Optional[datetime]
+
 def get_db_connection():
     """获取数据库连接"""
     try:
@@ -27,6 +34,43 @@ def get_db_connection():
     except Exception as e:
         logger.error(f"数据库连接失败: {str(e)}")
         raise HTTPException(status_code=500, detail="数据库连接失败")
+
+def get_active_conversation(user_id: int, conn) -> int:
+    """获取或创建活动会话"""
+    cursor = conn.cursor(dictionary=True)
+    
+    # 查找最新的会话
+    cursor.execute(
+        "SELECT id FROM conversations WHERE user_id = %s ORDER BY created_at DESC LIMIT 1",
+        (user_id,)
+    )
+    result = cursor.fetchone()
+    
+    if result:
+        conversation_id = result['id']
+    else:
+        # 创建新会话
+        cursor.execute(
+            "INSERT INTO conversations (user_id) VALUES (%s)",
+            (user_id,)
+        )
+        conn.commit()
+        conversation_id = cursor.lastrowid
+    
+    cursor.close()
+    return conversation_id
+
+def save_message(conn, conversation_id: int, role: str, content: str) -> int:
+    """保存消息"""
+    cursor = conn.cursor()
+    cursor.execute(
+        "INSERT INTO chat_messages (conversation_id, role, content) VALUES (%s, %s, %s)",
+        (conversation_id, role, content)
+    )
+    message_id = cursor.lastrowid
+    conn.commit()
+    cursor.close()
+    return message_id
 
 def save_chat_history(user_id: int, message: str, response: str):
     """保存聊天记录"""
@@ -117,15 +161,19 @@ async def chat_with_assistant(
     """与AI助手进行对话"""
     try:
         logger.info(f"收到聊天请求 - 用户ID: {current_user['id']}, 消息: {chat_message.message}")
+        conn = get_db_connection()
+        
+        # 获取或创建会话
+        conversation_id = get_active_conversation(current_user['id'], conn)
+        
+        # 保存用户消息
+        user_message_id = save_message(conn, conversation_id, 'user', chat_message.message)
         
         # 从知识库搜索相关信息
-        logger.info("开始搜索知识库...")
         cards = search_credit_cards(chat_message.message)
-        logger.info(f"搜索到 {len(cards)} 条信用卡信息")
         knowledge = format_knowledge_base(cards)
         
         # 初始化 DeepSeek 适配器
-        logger.info("初始化 DeepSeek 适配器...")
         deepseek = DeepSeekAdapter()
         
         try:
@@ -140,112 +188,167 @@ async def chat_with_assistant(
 
 用户问题：{chat_message.message}"""
             
-            logger.info("开始调用 DeepSeek API...")
             # 调用 DeepSeek API 获取回答
             response = await deepseek.chat_completion([
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
             ])
-            logger.info("DeepSeek API 调用成功")
             
-            # 保存聊天记录
-            logger.info("保存聊天记录...")
-            save_chat_history(current_user["id"], chat_message.message, response)
+            # 保存AI回复
+            assistant_message_id = save_message(conn, conversation_id, 'assistant', response)
             
-            logger.info("成功生成回答，准备返回响应")
             return {
                 "response": response,
-                "status": "success",
-                "context": {
-                    "type": "deepseek_response",
-                    "knowledge_used": bool(knowledge)
-                }
+                "message_id": assistant_message_id,
+                "status": "success"
             }
         finally:
-            # 确保关闭 DeepSeek 客户端
-            logger.info("关闭 DeepSeek 客户端")
             await deepseek.close()
             
     except Exception as e:
         logger.error(f"处理聊天请求失败: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
-
-@router.delete("/chat/{chat_id}")
-async def delete_chat_message(
-    chat_id: int,
-    current_user: dict = Depends(get_current_user)
-):
-    """删除聊天记录"""
-    try:
-        logger.info(f"删除聊天记录 - 用户ID: {current_user['id']}, 聊天ID: {chat_id}")
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        
-        # 软删除聊天记录
-        cursor.execute(
-            "UPDATE chat_history SET deleted_at = CURRENT_TIMESTAMP WHERE id = %s AND user_id = %s",
-            (chat_id, current_user["id"])
-        )
-        
-        if cursor.rowcount == 0:
-            raise HTTPException(status_code=404, detail="聊天记录不存在或无权删除")
-            
-        conn.commit()
-        cursor.close()
+    finally:
         conn.close()
-        
-        logger.info("聊天记录删除成功")
-        return {"message": "聊天记录删除成功"}
-    except Exception as e:
-        logger.error(f"删除聊天记录失败: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/chat/history")
 async def get_chat_history_endpoint(
-    limit: int = 10,
     current_user: dict = Depends(get_current_user)
 ):
     """获取聊天历史记录"""
     try:
-        logger.info(f"获取用户 {current_user['id']} 的聊天历史记录")
         conn = get_db_connection()
         cursor = conn.cursor(dictionary=True)
         
-        # 只获取未删除的记录
-        cursor.execute(
-            """
-            SELECT id, message, response, created_at 
-            FROM chat_history 
-            WHERE user_id = %s AND deleted_at IS NULL 
-            ORDER BY created_at DESC 
-            LIMIT %s
-            """,
-            (current_user["id"], limit)
-        )
+        # 获取最新会话的消息
+        cursor.execute("""
+            SELECT m.* FROM chat_messages m
+            JOIN conversations c ON m.conversation_id = c.id
+            WHERE c.user_id = %s
+            ORDER BY m.created_at ASC
+        """, (current_user['id'],))
         
-        history = cursor.fetchall()
-        logger.info(f"找到 {len(history)} 条历史记录")
-        
-        formatted_history = []
-        for msg in history:
-            formatted_history.extend([
-                {
-                    "id": msg["id"],
-                    "role": "user",
-                    "content": msg["message"],
-                    "created_at": msg["created_at"].isoformat()
-                },
-                {
-                    "id": msg["id"],
-                    "role": "assistant",
-                    "content": msg["response"],
-                    "created_at": msg["created_at"].isoformat()
-                }
-            ])
-            
+        messages = cursor.fetchall()
         cursor.close()
         conn.close()
-        return formatted_history
+        
+        return [
+            {
+                "id": msg['id'],
+                "role": msg['role'],
+                "content": msg['content'],
+                "created_at": msg['created_at']
+            }
+            for msg in messages
+        ]
     except Exception as e:
-        logger.error(f"获取聊天历史记录失败: {str(e)}", exc_info=True)
-        raise HTTPException(status_code=500, detail=str(e)) 
+        logger.error(f"获取聊天历史失败: {str(e)}")
+        raise HTTPException(status_code=500, detail="获取聊天历史失败")
+
+@router.post("/chat/new")
+async def create_new_conversation(
+    current_user: dict = Depends(get_current_user)
+):
+    """创建新会话"""
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        
+        # 创建新会话
+        cursor.execute(
+            "INSERT INTO conversations (user_id) VALUES (%s)",
+            (current_user['id'],)
+        )
+        conn.commit()
+        
+        # 添加欢迎消息
+        conversation_id = cursor.lastrowid
+        welcome_message = """您好！我是AI信用卡助手，我可以帮您：
+1. 推荐最适合您的信用卡
+2. 解答信用卡相关问题
+3. 对比不同信用卡的权益
+请告诉我您的需求。"""
+        
+        save_message(conn, conversation_id, 'assistant', welcome_message)
+        
+        cursor.close()
+        conn.close()
+        
+        return {"message": "新会话已创建"}
+    except Exception as e:
+        logger.error(f"创建新会话失败: {str(e)}")
+        raise HTTPException(status_code=500, detail="创建新会话失败")
+
+@router.delete("/chat/history")
+async def clear_chat_history(
+    current_user: dict = Depends(get_current_user)
+):
+    """清空聊天历史"""
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        
+        # 删除用户的所有会话（会级联删除消息）
+        cursor.execute(
+            "DELETE FROM conversations WHERE user_id = %s",
+            (current_user['id'],)
+        )
+        conn.commit()
+        
+        # 创建新会话并添加欢迎消息
+        cursor.execute(
+            "INSERT INTO conversations (user_id) VALUES (%s)",
+            (current_user['id'],)
+        )
+        conn.commit()
+        
+        conversation_id = cursor.lastrowid
+        welcome_message = """您好！我是AI信用卡助手，我可以帮您：
+1. 推荐最适合您的信用卡
+2. 解答信用卡相关问题
+3. 对比不同信用卡的权益
+请告诉我您的需求。"""
+        
+        save_message(conn, conversation_id, 'assistant', welcome_message)
+        
+        cursor.close()
+        conn.close()
+        
+        return {"message": "聊天历史已清空"}
+    except Exception as e:
+        logger.error(f"清空聊天历史失败: {str(e)}")
+        raise HTTPException(status_code=500, detail="清空聊天历史失败")
+
+@router.delete("/chat/message/{message_id}")
+async def delete_message_endpoint(
+    message_id: int,
+    current_user: dict = Depends(get_current_user)
+):
+    """删除单条消息"""
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        
+        # 验证消息所有权
+        cursor.execute("""
+            SELECT m.id FROM chat_messages m
+            JOIN conversations c ON m.conversation_id = c.id
+            WHERE m.id = %s AND c.user_id = %s
+        """, (message_id, current_user['id']))
+        
+        if not cursor.fetchone():
+            raise HTTPException(status_code=404, detail="消息不存在或无权删除")
+        
+        # 删除消息
+        cursor.execute("DELETE FROM chat_messages WHERE id = %s", (message_id,))
+        conn.commit()
+        
+        cursor.close()
+        conn.close()
+        
+        return {"message": "消息已删除"}
+    except HTTPException as e:
+        raise e
+    except Exception as e:
+        logger.error(f"删除消息失败: {str(e)}")
+        raise HTTPException(status_code=500, detail="删除消息失败") 
