@@ -18,5 +18,8 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
+  },
+  preview: {
+    allowedHosts: ['credit-card-assistant-web.onrender.com']
   }
 }) 
