@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // 创建需要认证的API实例
 const authApi = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://credit-card-assistant-api.onrender.com/api',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
@@ -11,7 +11,7 @@ const authApi = axios.create({
 
 // 创建公开API实例
 const publicApi = axios.create({
-  baseURL: 'http://localhost:8000/api',
+  baseURL: 'https://credit-card-assistant-api.onrender.com/api',
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
